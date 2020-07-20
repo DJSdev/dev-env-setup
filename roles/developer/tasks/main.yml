@@ -1,0 +1,17 @@
+- name: "Install XRDP"
+  include: XRDP.yml
+
+- name: "Install VSCode"
+  include: VSCode.yml
+
+- name: "Install and Setup Python3"
+  include: Python.yml
+
+- name: "Install Spotify"
+  include: Spotify.yml
+
+- name: "Install Postman"
+  include: Postman.yml
+
+- name: "Install git"
+  include: git.yml

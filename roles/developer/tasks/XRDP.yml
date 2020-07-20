@@ -1,0 +1,24 @@
+- name: "XRDP - Install through APT"
+  apt:
+    name: xrdp
+    state: present
+    update-cache: true
+
+- name: "XRDP - Set .xsession file"
+  shell: echo gnome-session >> $HOME/.xsession
+
+- name: "XRDP - Turn off vsock in conf"
+  lineinfile:
+    path: /etc/xrdp/xrdp.ini
+    backup: yes
+    regexp: '(^use_vsock.*)'
+    line: '# \1'
+    backrefs: yes
+    state: present
+    
+- name: "XRDP - Restart Service"
+  service:
+    name: xrdp
+    enabled: yes
+    state: restarted
+

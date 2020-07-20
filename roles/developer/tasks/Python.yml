@@ -1,0 +1,10 @@
+- name: "Install Python3"
+  apt:
+    name: python3
+    state: present
+
+- name: "Setup python -> python3 symlink"
+  file:
+    src: /bin/python3
+    dest: /bin/python
+    state: link

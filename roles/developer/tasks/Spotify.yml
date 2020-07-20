@@ -1,0 +1,5 @@
+- name: "Install Spotify"
+  snap:
+    name: spotify
+    state: present
+    classic: yes

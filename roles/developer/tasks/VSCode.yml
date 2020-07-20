@@ -1,0 +1,12 @@
+- name: "Installing VSCode-Ubuntu18"
+  apt:
+    name: code
+    state: present
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '18.04'
+
+- name: "Install VSCode-Ubuntu20"
+  snap:
+    name: code
+    state: present
+    classic: yes
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
