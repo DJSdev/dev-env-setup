@@ -15,6 +15,7 @@
     line: '# \1'
     backrefs: yes
     state: present
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04' 
     
 - name: "XRDP - Restart Service"
   service:
